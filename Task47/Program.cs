@@ -11,7 +11,7 @@ int InputInt(string message)
 }
 
 int m = InputInt("Введите количество строк (m): ");
-int n = InputInt("Введите количество строк (n): ");
+int n = InputInt("Введите количество столбцов (n): ");
 
 double[,] array = new double[m, n];
 Random rnd = new Random();
