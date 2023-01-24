@@ -4,7 +4,15 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-int m = 3, n = 4;
+int InputInt(string message)
+{
+    Console.Write(message);
+    return int.Parse(Console.ReadLine());
+}
+
+int m = InputInt("Введите количество строк (m): ");
+int n = InputInt("Введите количество строк (n): ");
+
 double[,] array = new double[m, n];
 Random rnd = new Random();
 
