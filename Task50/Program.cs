@@ -40,12 +40,30 @@ void SearchByIndexes(int x, int y)
     )
         Console.WriteLine($"Значение элемента с индексами [{x},{y}] = {array[x,y]}");
     else
-        Console.WriteLine("Такого элемента в массиве нет");
+        Console.WriteLine($"Элемента с индексами [{x},{y}] в массиве нет");
+}
+
+void SearchNyNumber(int number)
+{
+    if (
+        (number > (array.GetLength(0)*array.GetLength(1)))
+        ||
+        (number < 1)
+    )
+        Console.WriteLine($"Элемента с номером {number} в массиве нет");
+    else
+    {
+        Console.Write($"Значение элемента с номером {number} = ");
+        //уменьшаем на 1, так как фактическая нумерация ведётся с 0, а не с 1
+        number--;
+        Console.WriteLine(array[number / array.GetLength(1),number % array.GetLength(1)]);
+    }
 }
 
 FillAndPrintArray();
 
 SearchByIndexes(
-    InputInt("Введите индекс по оси X: "),
-    InputInt("Введите индекс по оси Y: ")
+    InputInt("Введите индекс по оси X, начиная с 0: "),
+    InputInt("Введите индекс по оси Y, начиная с 0: ")
 );
+SearchNyNumber(InputInt("Введите номер элемента, начиная с 1: "));
